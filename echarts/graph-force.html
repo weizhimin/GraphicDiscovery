@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body style="height: 100%; margin: 0">
+    <div id="container" style="height: 100%"></div>
+    <script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/echarts.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        var dom = document.getElementById("container");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        app.title = '力引导布局';
+
+        myChart.showLoading();
+        $.getJSON('../assets/crossv_graphic_circle.json', function (json) {
+            myChart.hideLoading();
+
+            var graph = json;
+            var categories = ["北京", "天津", "上海", "深圳", "广州", "成都", "重庆", "长沙", "郑州", "武汉", "西安", "南京",
+                "杭州", "苏州", "青岛", "其它"
+            ];
+            for (var i = 0; i < categories.length; i++) {
+                categories[i] = {
+                    name: categories[i]
+                };
+            }
+            graph.nodes.forEach(function (node) {
+                node.itemStyle = null;
+                node.symbolSize = node.symbolSize / 10;
+                node.value = node.symbolSize;
+                node.category = node.attributes.modularity_class;
+                // Use random x, y
+                node.x = node.y = null;
+                node.draggable = true;
+            });
+            option = {
+                title: {
+                    text: '跨城出行',
+                    subtext: 'Default layout',
+                    top: 'bottom',
+                    left: 'right'
+                },
+                tooltip: {},
+                legend: [{
+                    // selectedMode: 'single',
+                    data: categories.map(function (a) {
+                        return a.name;
+                    })
+                }],
+                animation: false,
+                series: [{
+                    name: '跨城出行',
+                    type: 'graph',
+                    layout: 'force',
+                    data: graph.nodes,
+                    links: graph.links,
+                    categories: categories,
+                    roam: true,
+                    label: {
+                        normal: {
+                            position: 'right'
+                        }
+                    },
+                    force: {
+                        repulsion: 100
+                    }
+                }]
+            };
+
+            myChart.setOption(option);
+        }, 'json');;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    </script>
+</body>
+
+</html>
