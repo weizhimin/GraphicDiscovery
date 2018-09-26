@@ -1,37 +1,10 @@
-## Welcome to GitHub Pages
+## 图的探索
 
-You can use the [editor on GitHub](https://github.com/weizhimin/GraphicDiscovery/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+图表库中关系图一直是自己不敢触碰的部分，首先不太明白什么场景下用这种图表，另外感觉它的数据结构很复杂，感觉离我很远，但是随着越来越多的可视化大屏里面有这类图表的展示，自己也不得不正视它，正好从高德上获取了一份中国城市跨城交通出行的数据，自己也在地图上进行了展示,通过这份数据对echarts demo中的关系图效果进行了测试，得到了下面的一些成果。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+# 圆形图
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### 关注与联系
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/weizhimin/GraphicDiscovery/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+欢迎关注我的知乎专栏《时空大数据可视化》https://zhuanlan.zhihu.com/timespacedatav
